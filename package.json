@@ -1,0 +1,23 @@
+{
+  "name": "grio-assigment",
+  "version": "1.0.0",
+  "description": "Assignment showcasing backend and frontend work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jasko-A/Grio-Assigment.git"
+  },
+  "author": "Jasmin Adzic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jasko-A/Grio-Assigment/issues"
+  },
+  "homepage": "https://github.com/Jasko-A/Grio-Assigment#readme",
+  "dependencies": {
+    "node-static": "^0.7.11",
+    "npm": "^6.7.0"
+  }
+}
