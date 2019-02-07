@@ -130,23 +130,27 @@ class Counter extends React.Component {
     super(props);
     this.state = {
       popup: 0,
-      count: 0
+      count: 0,
+      tempCount: 0
     };
     this.incrementer = this.incrementer.bind(this);
-    this.onButtonClick = this.onButtonClick.bind(this);
+    this.onPopup = this.onPopup.bind(this);
+    this.keepCount = this.keepCount.bind(this);
+    this.updateCount = this.updateCount.bind(this);
   }
 
-  onButtonClick() {
-    if(this.state.popup == 0)
-    {
-      this.setState({popup: 1})
-    }
-    else
-    {
-      this.setState({popup: 0})
-    }
+  keepCount (){
+    this.setState({popup: 0})
+  }
+  updateCount () {
+    this.setState({count: this.state.tempCount, popup: 0})
+  }
+  onPopup() {
+    
       
-      console.log("State of popup is: " + this.state.popup);
+      this.incrementer()
+      this.setState({popup: 1})
+         
   }
 
   incrementer() {
@@ -160,7 +164,7 @@ class Counter extends React.Component {
       nextCount = currCount * 2
     }
     currCount = nextCount;
-    this.setState({count: currCount})
+    this.setState({tempCount: currCount})
   }
 
 
@@ -168,14 +172,26 @@ class Counter extends React.Component {
 	render () {
     // if(this.state.popup == 0)
     // {
-
-      var count = this.props.count;
-      console.log(count);
+      
+      //var count = this.props.count;
+      //console.log(count);
+      console.log("THIS HERE: " + this.state.popup);
       return (
         React.createElement('div',{className: this.props.className, id: 'count-display'},
             React.createElement('h2', {id: 'count-title'}, "The count is: " + this.state.count),
-            React.createElement('button', {type: 'button', id: 'popup-button', onClick: this.incrementer.bind(this)}, "Increment ?")
-            //React.createElement('div',{popup: this.state.popup, closeFunc: this.onButtonClick.bind(this), display: this.state.popup ? 'none' : 'block' })
+            React.createElement('button', {type: 'button', id: 'popup-button', onClick: this.onPopup.bind(this)}, "Increment ?"),
+            React.createElement('div',{className: "popup", style:{display: (this.state.popup) ? 'flex' : 'none'}},
+                  React.createElement('div',{id:"popup-main"}, 
+                      React.createElement('div',{id:"curr-count"},
+                        React.createElement('h3',{id:"curr-count-heading"},"The curr count is: " + this.state.count),
+                        React.createElement('button', {type: 'button', id: 'keep-count', onClick: this.keepCount.bind(this)}, "Cancel")
+                      ),
+                      React.createElement('div',{id:"next-count"},
+                        React.createElement('h3',{id:"next-count-heading"},"The next count is: " + this.state.tempCount),
+                        React.createElement('button', {type: 'button', id: 'update-count', onClick: this.updateCount.bind(this)}, "Update")
+                      )
+                  )
+              )
         )
       );  
         
