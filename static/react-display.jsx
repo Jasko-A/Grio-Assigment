@@ -104,27 +104,6 @@ class Login extends React.Component {
   }
 }
 
-class Overlay extends React.Component {
-  render ()
-  {
-      var bool = this.props.popup;
-      console.log("YAYAYA : " + bool);
-      
-        return(
-        React.createElement('div', {className: "tempPop"}, "YAYAYAYYA")
-        );
-      
-      
-      
-        
-      
-    
-      
-      
-    
-  }
-}
-
 class Counter extends React.Component {
   constructor (props) {
     super(props);
@@ -137,15 +116,7 @@ class Counter extends React.Component {
   }
 
   onButtonClick() {
-    if(this.state.popup == 0)
-    {
       this.setState({popup: 1})
-    }
-    else
-    {
-      this.setState({popup: 0})
-    }
-      
       console.log("State of popup is: " + this.state.popup);
   }
 
@@ -168,18 +139,16 @@ class Counter extends React.Component {
 	render () {
     // if(this.state.popup == 0)
     // {
-
       var count = this.props.count;
       console.log(count);
       return (
         React.createElement('div',{className: this.props.className, id: 'count-display'},
             React.createElement('h2', {id: 'count-title'}, "The count is: " + this.state.count),
-            React.createElement('button', {type: 'button', id: 'popup-button', onClick: this.incrementer.bind(this)}, "Increment ?")
-            //React.createElement('div',{popup: this.state.popup, closeFunc: this.onButtonClick.bind(this), display: this.state.popup ? 'none' : 'block' })
+            React.createElement('button', {type: 'button', id: 'increment-button', onClick: this.onButtonClick.bind(this)}, "Increment ?")
         )
-      );  
         
-      
+        
+      );
     // }
     // else {
     //   React.createElement(Popup,{inc: this.incrementer.bind(this)})
@@ -188,18 +157,18 @@ class Counter extends React.Component {
 	}
 }
 
-// class Popup extends React.Component {
-//   render() {
-//     return (
-//       <div className='popup'>
-//         <div className='popup_inner'>
-//           <h1>{this.props.text}</h1>
-//         <button onClick={this.props.closePopup}>close me</button>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
+class Popup extends React.Component {
+  render() {
+    return (
+      <div className='popup'>
+        <div className='popup_inner'>
+          <h1>{this.props.text}</h1>
+        <button onClick={this.props.closePopup}>close me</button>
+        </div>
+      </div>
+    );
+  }
+}
 // The react component for the whole image gallery
 // Most of the code for this is in the included library
 class App extends React.Component {
