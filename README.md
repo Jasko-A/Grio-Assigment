@@ -22,7 +22,7 @@ This Poject is meant to showcase both simple yet intuitive knowledge in both
 front and back-end development.
 
 Scenarios are descriped in the pdf attached below:
-[web_take-home_assignment_v3](
+[web_take-home_assignment_v3](https://github.com/Jasko-A/Grio-Assigment/blob/master/web_take-home_assignment_v3.pdf)
 
 
 
