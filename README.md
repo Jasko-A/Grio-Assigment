@@ -21,8 +21,8 @@ React.js for the frontend. Languages used are HTML, CSS, and Javascript.
 This Poject is meant to showcase both simple yet intuitive knowledge in both 
 front and back-end development.
 
-Scenarios are descriped in the pdf attached below:
-[web_take-home_assignment_v3](
+Scenarios are descriped in the pdf attached below:  
+[web_take-home_assignment_v3](https://github.com/Jasko-A/Grio-Assigment/blob/master/web_take-home_assignment_v3.pdf)
 
 
 
