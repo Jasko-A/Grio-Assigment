@@ -184,12 +184,12 @@ class Counter extends React.Component {
             React.createElement('div',{className: "popup", style:{display: (this.state.popup) ? 'flex' : 'none'}},
                   React.createElement('div',{id:"popup-main"}, 
                       React.createElement('div',{id:"curr-count"},
-                        React.createElement('h3',{id:"curr-count-heading"},"The curr count is: " + this.state.count),
-                        React.createElement('button', {type: 'button', id: 'keep-count', onClick: this.keepCount.bind(this)}, "Cancel")
+                        React.createElement('h3',{id:"curr-count-heading"},"Current Count: " + this.state.count),
+                        React.createElement('button', {type: 'button', className: 'hvr-sweep-to-right', id: 'keep-count', onClick: this.keepCount.bind(this)}, "Cancel")
                       ),
                       React.createElement('div',{id:"next-count"},
-                        React.createElement('h3',{id:"next-count-heading"},"The next count is: " + this.state.tempCount),
-                        React.createElement('button', {type: 'button', id: 'update-count', onClick: this.updateCount.bind(this)}, "Update")
+                        React.createElement('h3',{id:"next-count-heading"},"Next Count: " + this.state.tempCount),
+                        React.createElement('button', {type: 'button', className: 'hvr-sweep-to-left', id: 'update-count', onClick: this.updateCount.bind(this)}, "Update")
                       )
                   )
               )
