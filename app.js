@@ -1,7 +1,7 @@
 //Author: Jasmin Adzic
 //Date Created: 02/04/2019
 
-const hostname = '127.0.0.1';
+const hostname = '0.0.0.0';
 var port = 720;
 
 //---------------------------------------------------//

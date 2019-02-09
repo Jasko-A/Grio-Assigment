@@ -1,40 +1,110 @@
 body {
 	margin:0;
+    /*Copied from https://freefrontend.com/css-background-patterns/*/
+    background: radial-gradient(#417dba 3px, transparent 4px), radial-gradient(black 1px, transparent 1px), linear-gradient(#ffff 2px, transparent 8px), linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px), #fff;
+    background-size: 108.9px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    /*----------------------------------------------------------------*/
 }
 
-h1 {
+/*h1 {
 	background-color: lightgrey;
     margin: 0;
     padding: 40px;
     box-shadow: 0px 1px 6px 1px grey;
+}*/
+.header {
+    margin: 0;
+    padding: 40px;
+    box-shadow: 0px 1px 6px 1px grey;
+    background-image: -webkit-linear-gradient(30deg, #9ed1ff 49.7%, #fe9882 50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 50px;
+}
+
+#header-left {
+    padding-left: 30px;
+}
+
+.or-main {
+    display: flex;
+    padding-left: 55px;
+}
+
+#left-or{
+    color:black;
+}
+
+#right-or {
+    color: white;
+}
+
+#header-right {
+    color: white;
+    padding-right: 30px;
 }
 
 #main-display {
 	display: flex;
     justify-content: center;
-    padding-top: 100px;
-
+    padding-top: 135px;
+    height:500px;
 }
 
+#count-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+}
 .formContainer {
+    background-color: white;
 	display: flex;
     justify-content: center;
     width: 500px;
-    height: 300px;
+    height: 330px;
     box-shadow: 0px 0px 9px 2px #ccc;
+    border-radius: 4px;
+
 }
 
 form {
 	display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 300px;
-    width: 40%;
+    height: 320px;
+    width: 60%;
 }
 
+.input-box {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+
 #login-button {
-	width: 50%;
+    width: 80%;
     align-self: center;
+    background-color: #9ed1ff;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#login-button:hover {
+    background-color: #fe9882;
 }
 
 .popup {
@@ -58,6 +128,10 @@ form {
     height: 30%;
     display: flex;
     flex-direction: row;
+}
+
+#popup-button {
+    margin-bottom: 50px;
 }
 #curr-count {
     width: 50%;

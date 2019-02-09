@@ -95,8 +95,8 @@ class Login extends React.Component {
     return(
         React.createElement('form',{onSubmit: this.handleSignIn.bind(this)},
         		React.createElement('h2',{id: 'title'},"Log In"),
-        		React.createElement('input', {type: 'text', ref: 'username', placeholder: 'Username'}),
-        		React.createElement('input', {type: 'password', ref: 'password', placeholder: 'Password'}),
+        		React.createElement('input', {type: 'text', className: 'input-box', id: 'input-user', ref: 'username', placeholder: 'Username'}),
+        		React.createElement('input', {type: 'password', className: 'input-box', id: 'input-pass', ref: 'password', placeholder: 'Password'}),
         		React.createElement('input', {type: 'submit', value: 'Log In', id: 'login-button'})
         	)
 
@@ -180,6 +180,7 @@ class Counter extends React.Component {
         React.createElement('div',{className: this.props.className, id: 'count-display'},
             React.createElement('h2', {id: 'count-title'}, "The count is: " + this.state.count),
             React.createElement('button', {type: 'button', id: 'popup-button', onClick: this.onPopup.bind(this)}, "Increment ?"),
+            React.createElement('button', {type: 'button', id: 'logout-button', onClick: this.props.onLogOut}, "Log Out"),
             React.createElement('div',{className: "popup", style:{display: (this.state.popup) ? 'flex' : 'none'}},
                   React.createElement('div',{id:"popup-main"}, 
                       React.createElement('div',{id:"curr-count"},
@@ -247,6 +248,11 @@ class App extends React.Component {
   	
 
   }
+
+  logOut()
+  {
+    this.setState({logInInfo: null})
+  }
   // selectTile(event, obj) {
   //   console.log("in onclick!", obj);
   //   let photos = this.state.photos;
@@ -265,7 +271,7 @@ class App extends React.Component {
     else {
     	console.log("GOING ONTO THE NEXT");
     	return(
-    		React.createElement(Counter,{className:'main-body'})
+    		React.createElement(Counter,{className:'main-body', onLogOut: this.logOut.bind(this)})
     	);
     }
   }  
