@@ -48,9 +48,9 @@ body {
 }
 
 #main-display {
-	display: flex;
+	  display: flex;
     justify-content: center;
-    padding-top: 135px;
+    padding-top: 60px;
     height:500px;
 }
 

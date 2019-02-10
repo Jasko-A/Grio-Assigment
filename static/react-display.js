@@ -2,6 +2,7 @@
 /* This array is just for testing purposes.  You will need to 
    get the real image data using an AJAX query. */
 
+
 const photos = [
 {src: "http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/A%20Torre%20Manuelina.jpg", width: 574, height: 381 },
 {src: "http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/Uluru%20sunset1141.jpg", width: 500 , height: 334 },
@@ -145,12 +146,17 @@ class Counter extends React.Component {
   updateCount () {
     this.setState({count: this.state.tempCount, popup: 0})
   }
-  onPopup() {
+  // onPopup() {
     
       
-      this.incrementer()
-      this.setState({popup: 1})
+  //     this.incrementer()
+  //     this.setState({popup: 1})
          
+  // }
+  onPopup() {
+    axios.post('?'+this.state.count, this.state.count).then(res => {
+      this.setState({tempCount: res.data, popup: 1})
+    });
   }
 
   incrementer() {
@@ -178,6 +184,7 @@ class Counter extends React.Component {
       console.log("THIS HERE: " + this.state.popup);
       return (
         React.createElement('div',{className: this.props.className, id: 'count-display'},
+            React.createElement('h2', {id: 'user-name'}, "Welcome " + this.props.username + ' !'),
             React.createElement('h2', {id: 'count-title'}, "The count is: " + this.state.count),
             React.createElement('button', {type: 'button', id: 'popup-button', onClick: this.onPopup.bind(this)}, "Increment ?"),
             React.createElement('button', {type: 'button', id: 'logout-button', onClick: this.props.onLogOut}, "Log Out"),
@@ -234,17 +241,28 @@ class App extends React.Component {
   {
   	console.log(user);
   	console.log(pass);
-  	if(user == this.state.tempUser && pass == this.state.tempPass)
-  	{
-  		console.log("PASSED1");
-  		this.setState({
-  				logInInfo: {
-  					user,
-  					pass,
-  				}
-  		})
-  		console.log("PASSED2");
-  	}
+    axios.post('?'+ user +'/'+ pass).then(res => {
+      console.log("HERE"+ res.data);
+      this.setState({logInInfo: res.data})
+    });
+
+    // logInInfo = {
+    //   user: ######
+    //   password: ####
+    // }
+
+
+  	// if(user == this.state.tempUser && pass == this.state.tempPass)
+  	// {
+  	// 	console.log("PASSED1");
+  	// 	this.setState({
+  	// 			logInInfo: {
+  	// 				user,
+  	// 				pass,
+  	// 			}
+  	// 	})
+  	// 	console.log("PASSED2");
+  	// }
   	
 
   }
@@ -271,7 +289,7 @@ class App extends React.Component {
     else {
     	console.log("GOING ONTO THE NEXT");
     	return(
-    		React.createElement(Counter,{className:'main-body', onLogOut: this.logOut.bind(this)})
+    		React.createElement(Counter,{className:'main-body', onLogOut: this.logOut.bind(this), username: this.state.logInInfo.user})
     	);
     }
   }  
