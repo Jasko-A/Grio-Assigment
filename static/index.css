@@ -1,3 +1,5 @@
+
+
 body {
 	margin:0;
     /*Copied from https://freefrontend.com/css-background-patterns/*/
@@ -296,5 +298,42 @@ form {
 .hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
+}
+
+@media screen and (max-width: 497px) {
+
+body {
+  background: #f9f5f4;
+  
+}
+
+.header {
+  flex-direction: column;
+  font-size: 45px;
+}
+#header-left {
+  padding-left: 0px;
+}
+.or-main {
+  padding-left: 0px;
+}
+#left-or {
+  color: white;
+}
+#header-right {
+  color: black;
+  padding-right: 0px;
+}
+
+.popup {
+  height: 900px;
+}
+#popup-main {
+  width: 410px;
+}
+.formContainer {
+  width: 400px;
+}
+
 }
 

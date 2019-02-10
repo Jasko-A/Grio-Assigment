@@ -196,7 +196,7 @@ class Counter extends React.Component {
                       ),
                       React.createElement('div',{id:"next-count"},
                         React.createElement('h3',{id:"next-count-heading"},"Next Count: " + this.state.tempCount),
-                        React.createElement('button', {type: 'button', className: 'hvr-sweep-to-left', id: 'update-count', onClick: this.updateCount.bind(this)}, "Update")
+                        React.createElement('button', {type: 'button', className: 'hvr-sweep-to-left', id: 'update-count', onClick: this.updateCount.bind(this)}, "Confirm")
                       )
                   )
               )
