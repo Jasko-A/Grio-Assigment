@@ -1,6 +1,6 @@
 /*Create by Jasmin Adzic*/
 
-
+//component for main Login screen
 class Login extends React.Component {
 	
   handleSignIn(e) {
@@ -23,7 +23,7 @@ class Login extends React.Component {
   }
 }
 
-
+//Compnonet for screen after login including the popup
 class Counter extends React.Component {
 
   constructor (props) {
@@ -127,7 +127,7 @@ class App extends React.Component {
     {
       return React.createElement('div',  // type
       { className: 'formContainer'}, // properties
-        React.createElement(Login, {onLogIn: this.logIn.bind(this)})  
+        React.createElement(Login, {onLogIn: this.logIn.bind(this)})//contents  
       );  
     }
     else {
