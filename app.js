@@ -10,8 +10,8 @@ var fs = require('fs');
 var http  = require('http');
 var static = require('node-static');
 var url = require('url');
-
 var request = require('axios');
+
 function static_handler(req, res) {
 	req.addListener('end', function() {
 		fileServer.serve(req, res, function (e, result) {
@@ -28,7 +28,7 @@ function static_handler(req, res) {
 
 function increment_handler(url, res) {
 	var num = Number(url);
-	console.log(num);
+	console.log("Current Num: " + num);
 	if(num == 0)
 	{
 		num = 1;
@@ -41,15 +41,14 @@ function increment_handler(url, res) {
 }
 
 function login_handler(url, res) {
-	console.log("HERE" + url[1]);
-	// var user = url[0];
-	// var password = url;
+	//object to store user's login contents
 	var obj = {
 		user: url[0],
 		password: url[1]
 	};
+
 	obj = JSON.stringify(obj);
-	console.log("obj: " + obj);
+	console.log("obj: " + obj); // check to see if object is created properly
 	res.write(obj, function(err) {res.end(); });
 }
 
@@ -60,10 +59,11 @@ function handler(req, res) {
 	{
 	url = url.replace('/','');
 	url = url.split('?');
+
 	//make sure that the url is correct
 	console.log(url);
-	console.log("The Length is: " + url.length);
-	console.log(typeof url); 
+	//console.log("The Length is: " + url.length);
+	//console.log(typeof url); 
 
 		if(url.length == 1)
 		{
@@ -72,11 +72,10 @@ function handler(req, res) {
 		}
 		else 
 		{
-			var subUrl = url[1].split('/');
+			var subUrl = url[1].split('/'); //gets the login info from the url and stored in subUrl
 			console.log(subUrl);
 			if(subUrl.length == 1)
 			{
-				console.log("HERE");
 				increment_handler(subUrl, res);
 			}
 			if(subUrl.length == 2) {

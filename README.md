@@ -10,7 +10,7 @@ Completed: 2/10/2019
 > - [X] Complete Popup and Increment/Cancel Button
 > - [X] Add logout button to count display page
 > - [X] Design the UI of the page
-> - [ ] Review and Turn in assignment
+> - [X] Review and Turn in assignment
 
 
 ## Overview
