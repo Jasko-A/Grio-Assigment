@@ -24,6 +24,10 @@ front and back-end development.
 Scenarios are descriped in the pdf attached below:  
 [web_take-home_assignment_v3](https://github.com/Jasko-A/Grio-Assigment/blob/master/web_take-home_assignment_v3.pdf)
 
-
+## How To Run  
+Make sure you have node installed and in your command line under  
+this directory type "node app" to start the server  
+Then in the browser type the url: "localhost:720/index.html"  
+Enjoy :)
 
 
